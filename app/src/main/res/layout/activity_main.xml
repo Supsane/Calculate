@@ -13,7 +13,6 @@
         android:layout_height="25sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:background="@drawable/black_border"
         android:fontFamily="monospace"
         android:text="@string/enterTextView"
         android:textAlignment="textEnd"
