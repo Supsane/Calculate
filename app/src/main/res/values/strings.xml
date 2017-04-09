@@ -17,6 +17,6 @@
     <string name="multiplicationButton">*</string>
     <string name="divisionButton">/</string>
     <string name="resetButton">C</string>
-    <string name="resultTextView">1234567890</string>
-    <string name="enterTextView">123*456/7-8+9</string>
+    <string name="resultTextView">0</string>
+    <string name="enterTextView">0</string>
 </resources>
