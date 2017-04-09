@@ -1,6 +1,7 @@
 package com.example.chashurinevgeny.calculate;
 
 import android.content.Context;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private static final String ENTER_TEXT_VIEW = "enterTextView";
+    private static final String RESULT_TEXT_VIEW = "resultTextView";
     private TextView enterTextView = null;
     private TextView resultTextView = null;
     private Button oneButton = null;
@@ -36,6 +39,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         enterTextView = (TextView) findViewById(R.id.enterTextView);
         resultTextView = (TextView) findViewById(R.id.resultTextView);
+        if (savedInstanceState != null) {
+            enterTextView.setText(savedInstanceState.getCharSequence(ENTER_TEXT_VIEW));
+            resultTextView.setText(savedInstanceState.getCharSequence(RESULT_TEXT_VIEW));
+        }
         oneButton = (Button) findViewById(R.id.oneButton);
         twoButton = (Button) findViewById(R.id.twoButton);
         threeButton = (Button) findViewById(R.id.threeButton);
@@ -72,6 +79,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resetButton.setOnClickListener(this);
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putCharSequence(ENTER_TEXT_VIEW, enterTextView.getText());
+        savedInstanceState.putCharSequence(RESULT_TEXT_VIEW, resultTextView.getText());
+        super.onSaveInstanceState(savedInstanceState);
+    }
 
     @Override
     public void onClick(View view) {
@@ -152,23 +165,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 enterTextView.setText(enterTextView.getText() + context.getResources().getString(R.string.dotButton));
                 break;
             case R.id.resultButton:
-                resultTextView.setText(controller.countResult());
+                resultTextView.setText(controller.countResult(enterTextView.getText().toString()));
                 break;
             case R.id.addButton:
-                controller.checkEnterTextView(context, enterTextView, resultTextView);
+                enterTextView.setText(enterTextView.getText() + context.getResources().getString(R.string.addButton));
+                controller.checkEnterTextView(context, enterTextView, resultTextView, view);
                 break;
             case R.id.subtractionButton:
-                controller.checkEnterTextView(context, enterTextView, resultTextView);
+                enterTextView.setText(enterTextView.getText() + context.getResources().getString(R.string.subtractionButton));
+                controller.checkEnterTextView(context, enterTextView, resultTextView, view);
                 break;
             case R.id.multiplicationButton:
-                controller.checkEnterTextView(context, enterTextView, resultTextView);
+                enterTextView.setText(enterTextView.getText() + context.getResources().getString(R.string.multiplicationButton));
+                controller.checkEnterTextView(context, enterTextView, resultTextView, view);
                 break;
             case R.id.divisionButton:
-                controller.checkEnterTextView(context, enterTextView, resultTextView);
+                enterTextView.setText(enterTextView.getText() + context.getResources().getString(R.string.divisionButton));
+                controller.checkEnterTextView(context, enterTextView, resultTextView, view);
                 break;
             case R.id.resetButton:
                 enterTextView.setText(context.getResources().getString(R.string.enterTextView));
+                resultTextView.setText(context.getResources().getString(R.string.resultTextView));
                 break;
         }
     }
+
+
 }
