@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 enterTextView.setText(enterTextView.getText() + context.getResources().getString(R.string.dotButton));
                 break;
             case R.id.resultButton:
-                resultTextView.setText(controller.countResult(enterTextView.getText().toString()));
+                resultTextView.setText(controller.countResult(enterTextView.getText().toString(), context));
                 break;
             case R.id.addButton:
                 enterTextView.setText(enterTextView.getText() + context.getResources().getString(R.string.addButton));
