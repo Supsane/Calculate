@@ -47,19 +47,19 @@ public class MainController {
     public void checkEnterTextView(Context context, TextView enterTextView, TextView resultTextView, View view) {
         String strEnterTextView = enterTextView.getText().toString();
         for (int i = 0; i < strEnterTextView.length(); i++) {
-            if (String.valueOf(strEnterTextView.charAt(i)).equals(context.getResources().getText(R.string.addButton).toString())) {
+            if (String.valueOf(strEnterTextView.charAt(i)).equals("+")) {
                 if (i != strEnterTextView.length() - 1) {
                     resultTextView.setText(countResult(strEnterTextView, context));
                 }
-            } else if (String.valueOf(strEnterTextView.charAt(i)).equals(context.getResources().getText(R.string.subtractionButton).toString())) {
+            } else if (String.valueOf(strEnterTextView.charAt(i)).equals("-")) {
                 if (i != strEnterTextView.length() - 1) {
                     resultTextView.setText(countResult(strEnterTextView, context));
                 }
-            } else if (String.valueOf(strEnterTextView.charAt(i)).equals(context.getResources().getText(R.string.multiplicationButton).toString())) {
+            } else if (String.valueOf(strEnterTextView.charAt(i)).equals("*")) {
                 if (i != strEnterTextView.length() - 1) {
                     resultTextView.setText(countResult(strEnterTextView, context));
                 }
-            } else if (String.valueOf(strEnterTextView.charAt(i)).equals(context.getResources().getText(R.string.divisionButton).toString())) {
+            } else if (String.valueOf(strEnterTextView.charAt(i)).equals("/")) {
                 if (i != strEnterTextView.length() - 1) {
                     resultTextView.setText(countResult(strEnterTextView, context));
                 }

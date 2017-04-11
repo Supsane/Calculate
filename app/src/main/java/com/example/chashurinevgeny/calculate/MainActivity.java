@@ -174,20 +174,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.addButton:
-                enterTextView.setText(enterTextView.getText() + context.getResources().getString(R.string.addButton));
                 controller.checkEnterTextView(context, enterTextView, resultTextView, view);
+                enterTextView.setText(enterTextView.getText() + context.getResources().getString(R.string.addButton));
                 break;
             case R.id.subtractionButton:
-                enterTextView.setText(enterTextView.getText() + context.getResources().getString(R.string.subtractionButton));
                 controller.checkEnterTextView(context, enterTextView, resultTextView, view);
+                enterTextView.setText(enterTextView.getText() + context.getResources().getString(R.string.subtractionButton));
                 break;
             case R.id.multiplicationButton:
-                enterTextView.setText(enterTextView.getText() + context.getResources().getString(R.string.multiplicationButton));
                 controller.checkEnterTextView(context, enterTextView, resultTextView, view);
+                enterTextView.setText(enterTextView.getText() + context.getResources().getString(R.string.multiplicationButton));
                 break;
             case R.id.divisionButton:
-                enterTextView.setText(enterTextView.getText() + context.getResources().getString(R.string.divisionButton));
                 controller.checkEnterTextView(context, enterTextView, resultTextView, view);
+                enterTextView.setText(enterTextView.getText() + context.getResources().getString(R.string.divisionButton));
                 break;
             case R.id.resetButton:
                 enterTextView.setText(context.getResources().getString(R.string.enterTextView));
