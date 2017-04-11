@@ -19,4 +19,5 @@
     <string name="resetButton">C</string>
     <string name="resultTextView">0</string>
     <string name="enterTextView">0</string>
+    <string name="stopNull">На ноль делить нельзя</string>
 </resources>

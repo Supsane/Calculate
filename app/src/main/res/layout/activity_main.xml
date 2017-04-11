@@ -28,7 +28,7 @@
         android:fontFamily="monospace"
         android:text="@string/resultTextView"
         android:textAlignment="textEnd"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <Button

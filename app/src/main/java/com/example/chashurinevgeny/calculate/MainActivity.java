@@ -165,7 +165,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 enterTextView.setText(enterTextView.getText() + context.getResources().getString(R.string.dotButton));
                 break;
             case R.id.resultButton:
-                resultTextView.setText(controller.countResult(enterTextView.getText().toString(), context));
+                if (controller.countResult(enterTextView.getText().toString(), context).equals(context.getResources().getString(R.string.stopNull))) {
+                    resultTextView.setTextSize(15);
+                    resultTextView.setText(controller.countResult(enterTextView.getText().toString(), context));
+                } else {
+                    resultTextView.setTextSize(20);
+                    resultTextView.setText(controller.countResult(enterTextView.getText().toString(), context));
+                }
                 break;
             case R.id.addButton:
                 enterTextView.setText(enterTextView.getText() + context.getResources().getString(R.string.addButton));
@@ -186,6 +192,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.resetButton:
                 enterTextView.setText(context.getResources().getString(R.string.enterTextView));
                 resultTextView.setText(context.getResources().getString(R.string.resultTextView));
+                resultTextView.setTextSize(20);
                 break;
         }
     }
